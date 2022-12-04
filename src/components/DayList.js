@@ -3,6 +3,8 @@ import DayListItem from "./DayListItem";
 
 
 export default function DayList(props) {
+
+
   const listOfDaysAndSlots = props.days.map(item => {
     return (
       <DayListItem
