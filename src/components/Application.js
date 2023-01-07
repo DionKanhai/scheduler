@@ -32,7 +32,11 @@ export default function Application(props) {
     })
   }, []);
 
-  
+
+  const bookInterview = function(id, interview) {
+    console.log(id, interview);
+  }
+
 
   const dailyAppointments = getAppointmentsForDay(state, state.day)
   const dailyInterviewers = getInterviewersForDay(state, state.day)
@@ -45,9 +49,11 @@ export default function Application(props) {
         time={appointment.time}
         interview={interview}
         interviewers={dailyInterviewers}
+        bookInterview={bookInterview}
       />
     )
-  })
+  });
+  
 
 
   return (
