@@ -40,7 +40,7 @@ export default function Application(props) {
     };
     const appointments = {
       ...state.appointments,
-      [id]: appointment,
+      [id]: appointment
     };
     const interviewDataFromAPI = `/api/appointments/${id}`;
     return axios.put(interviewDataFromAPI, { interview })
@@ -50,9 +50,28 @@ export default function Application(props) {
             ...prev, appointments
           }
         })
-      });
+      })
   };
 
+  const cancelInterview = function(id) {
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    }
+    const interviewDataFromAPI = `/api/appointments/${id}`;
+    return axios.delete(interviewDataFromAPI)
+      .then(() => {
+        setState((prev) => {
+          return {
+            ...prev, appointments
+          }
+        })
+      })
+  }
 
   const dailyAppointments = getAppointmentsForDay(state, state.day)
   const dailyInterviewers = getInterviewersForDay(state, state.day)
@@ -60,13 +79,14 @@ export default function Application(props) {
   const interview = getInterview(state, appointment.interview)
     return (
       <Appointment
-        // {...appointment}
-        key={appointment.id}
+        {...appointment}
+        key={appointment.id}s
         id={appointment.id}
         time={appointment.time}
         interview={interview}
         interviewers={dailyInterviewers}
         bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
       />
     )
   });
@@ -97,6 +117,7 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         {appointmentsData}
+        <Appointment time="5pm"/>
       </section>
     </main>
   );

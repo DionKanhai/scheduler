@@ -7,9 +7,8 @@ export default function Status({ message }) {
         className="appointment__status-image"
         src="images/status.png"
         alt="Loading"
-        message={message}
       />
-      <h1 className="text--semi-bold">Saving</h1>
+      <h1 className="text--semi-bold">{message}</h1>
     </main>
   )
 }
