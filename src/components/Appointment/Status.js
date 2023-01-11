@@ -9,7 +9,7 @@ export default function Status({ message }) {
         alt="Loading"
         message={message}
       />
-      <h1 className="text--semi-bold">Deleting</h1>
+      <h1 className="text--semi-bold">Saving</h1>
     </main>
   )
 }
