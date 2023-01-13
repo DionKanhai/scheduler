@@ -69,7 +69,11 @@ export default function Appointment({ student, interviewer, time, interview, int
           onClose={() => back()}
         />
       }
-      {mode === DELETING && <Status message={DELETING} />}
+      {mode === DELETING &&
+        <Status
+          message={DELETING}
+        />
+      }
       {mode === SHOW && (
         <Show
           student={interview.student}

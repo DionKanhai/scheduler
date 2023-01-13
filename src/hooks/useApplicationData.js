@@ -27,6 +27,28 @@ export default function useApplicationData() {
     })
   }, []);
 
+  const updateSpots = function (id, appointments) {
+    // find the day that we want to book or cancel our appointment and see if it includes the
+    // appointment id 
+    const foundDay = state.days.find((day) => day.appointments.includes(id));
+    const foundIndex = state.days.findIndex((day) => day.appointments.includes(id));
+
+    let spots = 0;
+    if (!foundDay) {
+      return state.days;
+    }
+
+    for (const id of foundDay.appointments) {
+      if (appointments[id].interview === null) {
+        spots++
+      }
+    }
+    const days = [
+      ...state.days
+    ]
+    days[foundIndex] = { ...days[foundIndex], spots }
+    return days
+  }
 
   const bookInterview = function (id, interview) {
     const appointment = {
@@ -37,12 +59,13 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
+    const days = updateSpots(id, appointments);
     const interviewDataFromAPI = `/api/appointments/${id}`;
     return axios.put(interviewDataFromAPI, { interview })
       .then(() => {
         setState((prev) => {
           return {
-            ...prev, appointments
+            ...prev, appointments, days
           }
         })
       })
@@ -57,16 +80,16 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     }
+    const days = updateSpots(id, appointments)
     const interviewDataFromAPI = `/api/appointments/${id}`;
     return axios.delete(interviewDataFromAPI)
       .then(() => {
         setState((prev) => {
           return {
-            ...prev, appointments
+            ...prev, appointments, days
           }
         })
       })
   }
   return { cancelInterview, bookInterview, setDay, state }
 }
-
