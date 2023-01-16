@@ -25,7 +25,7 @@ export default function Appointment({ student, interviewer, time, interview, int
   const { mode, transition, back } = useVisualMode(
     interview ? SHOW : EMPTY
   );
-
+  
   const saveAppointment = function (name, interviewer) {
     const interview = {
       student: name,
