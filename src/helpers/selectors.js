@@ -27,8 +27,9 @@ export function getInterview(state, interview) {
   return interviewObj;
 };
 
-
-
+/* This function takes the state and the day as parameters
+and returns an array that contains the states interviewers id for the
+specific day */
 export function getInterviewersForDay(state, day) {
   const foundDay = state.days.find((element) => element.name === day);
   if (!foundDay) {
