@@ -1,4 +1,6 @@
 # Interview Scheduler
+The Interview Scheduler is an application a user can use to create, edit, or cancel an interview. A user can enter their name, book an interview with a selected interviewer from a list. The interviews run from Monday to Friday, at intervals of one hour from 12pm-5pm.
+This application was created using React along with testing libraries such as Jest, Cypress and Storybook.
 
 ## Setup
 
