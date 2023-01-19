@@ -4,10 +4,14 @@ This application was created using React along with testing libraries such as Je
 
 ## Web Application Views
 
-!["Enter a Name and Select an Interviewer of choice"](https://github.com/DionKanhai/scheduler/blob/master/docs/Enter%20Name%20and%20Select%20Interviewer.png?raw=true)
-!["Save the Appointment"](https://github.com/DionKanhai/scheduler/blob/master/docs/Save%20an%20Appointment.png?raw=true)
-!["After Saving the Appointment"](https://github.com/DionKanhai/scheduler/blob/master/docs/After%20Saving%20an%20Appointment.png?raw=true)
-!["Confirm and Delete an Appointment"](https://github.com/DionKanhai/scheduler/blob/master/docs/Confirm%20Deleting%20an%20Appointment.png?raw=true)
+!["Enter a Name and Select an Interviewer of choice"]
+(https://github.com/DionKanhai/scheduler/blob/master/docs/Enter%20Name%20and%20Select%20Interviewer.png?raw=true)
+!["Save the Appointment"]
+(https://github.com/DionKanhai/scheduler/blob/master/docs/Save%20an%20Appointment.png?raw=true)
+!["After Saving the Appointment"]
+(https://github.com/DionKanhai/scheduler/blob/master/docs/After%20Saving%20an%20Appointment.png?raw=true)
+!["Confirm and Delete an Appointment"]
+(https://github.com/DionKanhai/scheduler/blob/master/docs/Confirm%20Deleting%20an%20Appointment.png?raw=true)
 
 
 ## Setup
